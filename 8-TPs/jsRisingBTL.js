@@ -9,5 +9,60 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 
+ 	var edad;
+ 	var sexo;
+ 	var estadocivil;
+ 	var sueldobruto;
+ 	var legajo;
+ 	var nacionalidad;
+
+ 	edad=prompt("Ingrese su edad: ");
+ 	edad=parseInt(edad);
+ 	while (isNaN(edad)==true || edad<18 || edad>90)
+ 	{
+ 		edad=prompt("Error, Ingrese una edad valida entre 18 y 90 años");
+ 		edad=parseInt(edad);		
+ 	}
+
+ 	sexo=prompt("Ingrese su sexo: ");
+ 	while (isNaN(sexo)==false || sexo!="F" && sexo!="M")
+ 	{
+ 		sexo=prompt("Error, Ingrese un sexo valido F o M: ");
+ 	}	
+
+ 	estadocivil=prompt("Ingrese 1=soltero, 2=casado, 3=viudo");
+ 	estadocivil=parseInt(estadocivil);
+ 	while (isNaN(estadocivil)==true || estadocivil<1 || estadocivil>3)
+ 	{
+ 		estadocivil=prompt("Error, Ingrese 1=soltero, 2=casado, 3=viudo");
+ 		estadocivil=parseInt(estadocivil);
+ 	}	
+
+ 	sueldobruto=prompt("Ingrese su sueldo bruto: ");
+ 	sueldobruto=parseInt(sueldobruto);
+ 	while (isNaN(sueldobruto)==true || sueldobruto<8000)
+ 	{
+ 		sueldobruto=prompt("Error, Ingrese su sueldo bruto: ");
+ 		sueldobruto=parseInt(sueldobruto);
+ 	}
+
+ 	legajo=prompt("Ingrese numero de legajo: ");
+ 	legajo=parseInt(legajo);
+ 	while (isNaN(legajo)==true || legajo>9999 || legajo<1000)
+ 	{
+ 		legajo=prompt("Error, Ingrese un numero de legajo valido");
+ 		legajo=parseInt(legajo);
+ 	}
+
+ 	nacionalidad=prompt("Ingrese A=argentino, E=extranjero, N=nacionalizado");
+ 	while (isNaN(nacionalidad)==false || nacionalidad!="A" && nacionalidad!="E" && nacionalidad!="N")
+ 	{
+ 		nacionalidad=prompt("Error, Ingrese A=argentino, E=extranjero, N=nacionalizado");
+ 	}
+ 	Nacionalidad.value=nacionalidad;
+ 	Legajo.value=legajo;
+	Sueldo.value=sueldobruto;
+	EstadoCivil.value=estadocivil;
+	Sexo.value=sexo;
+	Edad.value=edad;
 }
